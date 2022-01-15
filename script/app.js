@@ -12,9 +12,9 @@ let score = 0;
 
 hands.forEach((hand) => {
   hand.addEventListener("click", (e) => {
+    user = e.currentTarget.id;
     //SELECT COMPUTER
     let computer = listChoose[Math.trunc(Math.random() * listChoose.length)];
-    user = e.currentTarget.id;
     hideHandsContent();
     showResultContent(computer);
     checkWinner(computer);
@@ -63,4 +63,5 @@ const restartGame = () => {
   handsContainer.classList.remove("hide");
   resultContainer.classList.add("hide");
 };
+
 btnReload.addEventListener("click", restartGame);
