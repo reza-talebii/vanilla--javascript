@@ -20,3 +20,32 @@ body {
   justify-content: center;
   align-items: center;
 }
+.score-container {
+  width: 80%;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.score-container .title img {
+  width: 80%;
+}
+
+.score {
+  background: #fff;
+  width: 6rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.score p {
+  color: #1f3757;
+  font-weight: bold;
+}
+.score h1 {
+  color: #131537;
+}
