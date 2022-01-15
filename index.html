@@ -21,7 +21,7 @@
         </div>
         <div class="score">
           <p>score</p>
-          <h1>0</h1>
+          <h1 id="point">0</h1>
         </div>
       </div>
       <!-- Rock-Paper-Scissors -->
@@ -37,11 +37,11 @@
         </div>
       </div>
       <!-- USER VS COMPUTER -->
-      <div class="result">
+      <div class="result hide">
         <!-- USER -->
-        <div id="user" class="result-box">
+        <div class="result-box">
           <span>YOU PICKED</span>
-          <img src="images/Rock.png" alt="hand" />
+          <img src="images/Rock.png" alt="hand" id="user-img-result" />
         </div>
         <!-- RESULT GAME -->
         <div id="result-game" class="result-box">
@@ -50,9 +50,9 @@
         </div>
         <!-- RESULT GAME-->
         <!-- COMPUTER -->
-        <div id="computer" class="result-box">
+        <div class="result-box">
           <span>COMPUTER PICKED</span>
-          <img src="images/Scissors.png" alt="hand" />
+          <img src="images/Scissors.png" id="computer-img-result" alt="hand" />
         </div>
         <!-- COMPUTER -->
       </div>
