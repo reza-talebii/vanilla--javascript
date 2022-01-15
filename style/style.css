@@ -18,6 +18,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 .score-container {
@@ -27,6 +28,7 @@ body {
   justify-content: space-between;
   padding: 1rem;
   border-radius: 10px;
+  margin: 2rem 0;
 }
 
 .score-container .title img {
@@ -48,4 +50,24 @@ body {
 }
 .score h1 {
   color: #131537;
+}
+
+.hands {
+  background: url("../images/triangle.png") no-repeat center;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hand {
+  margin: 0.5rem;
+}
+.hand img {
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 90%;
+}
+.hand img:hover {
+  transform: translateY(-10px);
 }
