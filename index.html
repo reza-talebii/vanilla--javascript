@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Rock-Paper-Scissors</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="score-container">
+        <div class="title">
+          <img src="images/title.png" alt="logo" />
+        </div>
+        <div class="score">
+          <p>score</p>
+          <h1 id="point">0</h1>
+        </div>
+      </div>
+      <!-- Rock-Paper-Scissors -->
+      <div class="hands">
+        <div class="hand" id="paper">
+          <img src="images/Paper.png" alt="hand" />
+        </div>
+        <div class="hand" id="scissors">
+          <img src="images/Scissors.png" alt="hand" />
+        </div>
+        <div class="hand" id="rock">
+          <img src="images/Rock.png" alt="hand" />
+        </div>
+      </div>
+      <!-- USER VS COMPUTER -->
+      <div class="result hide">
+        <!-- USER -->
+        <div class="result-box">
+          <span>YOU PICKED</span>
+          <img src="images/Rock.png" alt="hand" id="user-img-result" />
+        </div>
+        <!-- RESULT GAME -->
+        <div id="result-game" class="result-box">
+          <h1 id="result-title">YOU WIN</h1>
+          <button id="btn-reload">PLAY AGAIN</button>
+        </div>
+        <!-- RESULT GAME-->
+        <!-- COMPUTER -->
+        <div class="result-box">
+          <span>COMPUTER PICKED</span>
+          <img src="images/Scissors.png" id="computer-img-result" alt="hand" />
+        </div>
+        <!-- COMPUTER -->
+      </div>
+    </div>
+  </body>
+  <script src="script/app.js"></script>
+</html>
