@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
 //variable
 $pink: #ff74a4;
 $blue: #9ce3ff;
@@ -8,7 +10,6 @@ $darkWhite: #cecaca;
 $pinkShadow: #ffcbdd;
 $LightBShadow: rgba(0, 0, 0, 0.15);
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 //base style
 * {
   margin: 0;
@@ -29,6 +30,7 @@ body {
   margin: 0;
 }
 
+// style
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -51,6 +53,7 @@ body {
   font-size: 1.1rem;
 }
 
+//**image & title music**
 .music {
   display: flex;
   flex-direction: column;
@@ -121,5 +124,36 @@ body {
 
   &__parent:hover &__child::after {
     opacity: 1;
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  & i:nth-child(1),
+  & i:nth-child(5) {
+    font-size: 1.7rem;
+  }
+
+  & i:nth-child(2),
+  & i:nth-child(4),
+  .play {
+    height: 44px;
+    width: 44px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid $white;
+    box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e667c, -3px -3px 15px #f0ecec;
+  }
+
+  .play {
+    height: 54px !important;
+    width: 54px !important;
+    border: 3px solid $white;
   }
 }

@@ -151,4 +151,47 @@ body {
 .progress__parent:hover .progress__child::after {
   opacity: 1;
 }
+
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls i:nth-child(1),
+.controls i:nth-child(5) {
+  font-size: 1.7rem;
+}
+
+.controls i:nth-child(2),
+.controls i:nth-child(4),
+.controls .play {
+  height: 44px;
+  width: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  -webkit-box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e667c, -3px -3px 15px #f0ecec;
+          box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e667c, -3px -3px 15px #f0ecec;
+}
+
+.controls .play {
+  height: 54px !important;
+  width: 54px !important;
+  border: 3px solid #fff;
+}
 /*# sourceMappingURL=style.css.map */
