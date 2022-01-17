@@ -40,10 +40,10 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 350px;
   padding: 0 1.2rem;
   margin: 0.5rem 0;
-  min-height: 93vh;
+  min-height: 98vh;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
   background: linear-gradient($blue, $pink);
@@ -55,7 +55,7 @@ i {
   display: flex;
   justify-content: space-between;
   font-size: 1.1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 
 //**image & title music**
@@ -138,6 +138,7 @@ i {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 1rem;
 
   & i:nth-child(1),
   & i:nth-child(5) {
