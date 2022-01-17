@@ -44,9 +44,37 @@ body {
   color: $white;
 }
 
-.tab__bar {
+.tab-bar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 1.1rem;
+}
+
+.music {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    width: 70%;
+    img {
+      border-radius: 100%;
+      object-fit: cover;
+      width: 100%;
+      box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163,
+        -10px -10px 20px #e6f6ff;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    h1 {
+      font-size: 1.4rem;
+    }
+    span {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
 }

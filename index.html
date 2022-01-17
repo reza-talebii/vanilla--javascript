@@ -15,11 +15,36 @@
   </head>
   <body>
     <section class="wrapper">
-      <header class="tab__bar">
-        <i class="material-icons tab__bar--favorite">favorite_border</i>
-        <h4 class="tab-bar--title">Now Playing</h4>
-        <i class="material-icons tab__bar--add">add</i>
+      <header class="tab-bar">
+        <i class="material-icons">favorite_border</i>
+        <h4>Now Playing</h4>
+        <i class="material-icons">add</i>
       </header>
+      <main>
+        <section class="music">
+          <!-- music image -->
+          <div class="music__img">
+            <img
+              src="asset/images/Shadmehr Aghili - Mahaal.jpg"
+              alt="cover music"
+              id="music-cove"
+            />
+          </div>
+          <!-- music title -->
+          <div class="music__title">
+            <h1 id="music-name">Behet Ghol Midam</h1>
+            <span id="artist-name">Mohsen Yeganeh</span>
+          </div>
+        </section>
+        <!-- music progress -->
+        <section class="progress">
+          <div class="progress__parent">
+            <div class="progress__child"></div>
+          </div>
+          <span class="progress__time" id="music-cureenttime">0:00</span>
+          <span class="progress__endtiem" id="music-time">3:04</span>
+        </section>
+      </main>
     </section>
   </body>
   <script src="asset/scripts/list-music.js"></script>

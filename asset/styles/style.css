@@ -51,7 +51,7 @@ body {
   color: #fff;
 }
 
-.tab__bar {
+.tab-bar {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,5 +60,44 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 1.1rem;
+}
+
+.music {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.music__img {
+  width: 70%;
+}
+
+.music__img img {
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  -webkit-box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163, -10px -10px 20px #e6f6ff;
+          box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163, -10px -10px 20px #e6f6ff;
+}
+
+.music__title {
+  text-align: center;
+}
+
+.music__title h1 {
+  font-size: 1.4rem;
+}
+
+.music__title span {
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
