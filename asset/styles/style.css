@@ -25,7 +25,12 @@ body {
   margin: 0;
 }
 
+i {
+  cursor: pointer;
+}
+
 .wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,5 +198,89 @@ body {
   height: 54px !important;
   width: 54px !important;
   border: 3px solid #fff;
+}
+
+.music-list {
+  color: #515c6f;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9ce3ff), to(transparent)), -webkit-gradient(linear, right bottom, left top, from(#ff74a5dc), to(transparent)), -webkit-gradient(linear, left bottom, right top, from(#9ce3ff), to(transparent));
+  background: linear-gradient(#9ce3ff, transparent), linear-gradient(to top left, #ff74a5dc, transparent), linear-gradient(to top right, #9ce3ff, transparent);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 15px;
+  padding: 1.5rem;
+  overflow-y: scroll;
+  font-weight: bold;
+  font-size: 1.1 0.5rem;
+  display: none;
+}
+
+.music-list-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.music-list-header-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.music-list-header-titles span {
+  margin: 0 0.4rem;
+}
+
+.music-list .list-music-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.699);
+}
+
+.music-list .list-music-item audio {
+  display: none;
+}
+
+.music-list .list-music-item span {
+  font-size: 0.8rem;
+}
+
+.music-list .list-music-item:hover {
+  color: #ff74a4;
+  cursor: pointer;
+}
+
+.music-list::-webkit-scrollbar {
+  display: none;
+}
+
+.active {
+  color: #ff74a4;
+}
+
+.show {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

@@ -20,7 +20,8 @@
         <h4>Now Playing</h4>
         <i class="material-icons">add</i>
       </header>
-      <main>
+
+      <main class="main">
         <section class="music">
           <!-- music image -->
           <div class="music__img">
@@ -61,6 +62,56 @@
           <i id="more-music" class="material-icons">queue_music</i>
         </section>
       </main>
+
+      <footer class="footer">
+        <section class="music-list">
+          <!-- list header -->
+          <div class="music-list-header">
+            <!-- title -->
+            <div class="music-list-header-titles">
+              <i class="list material-icons">queue_music</i>
+              <span>Music List</span>
+            </div>
+            <i id="close-list" class="material-icons">close</i>
+          </div>
+          <!-- list music -->
+          <ul id="lists-music">
+            <li class="list-music-item active">
+              <audio
+                src="asset/audios/Ho3ein - Khafan.mp3"
+                class="music-list-1"
+              ></audio>
+              <div class="list-music-name">
+                <h4>Harley Bird - Home</h4>
+                <span>Jordan Scho</span>
+              </div>
+              <span id="list-music-time">0:00</span>
+            </li>
+            <li class="list-music-item">
+              <audio
+                src="asset/audios/Shadmehr Aghili - Mahaal.mp3"
+                class="music-list-2"
+              ></audio>
+              <div class="list-music-name">
+                <h4>Harley Bird - Home</h4>
+                <span>Jordan Scho</span>
+              </div>
+              <span id="list-music-time">0:00</span>
+            </li>
+            <li class="list-music-item">
+              <audio
+                src="asset/audios/Mohsen Yeganeh - Behet Ghol Midam.mp3"
+                class="music-list-3"
+              ></audio>
+              <div class="list-music-name">
+                <h4>Harley Bird - Home</h4>
+                <span>Jordan Scho</span>
+              </div>
+              <span id="list-music-time">0:00</span>
+            </li>
+          </ul>
+        </section>
+      </footer>
     </section>
   </body>
   <script src="asset/scripts/list-music.js"></script>

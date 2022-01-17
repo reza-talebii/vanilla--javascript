@@ -30,8 +30,12 @@ body {
   margin: 0;
 }
 
+i {
+  cursor: pointer;
+}
 // style
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,4 +160,72 @@ body {
     width: 54px !important;
     border: 3px solid $white;
   }
+}
+
+.music-list {
+  color: $lightBlack;
+  background: linear-gradient(#9ce3ff, transparent),
+    linear-gradient(to top left, #ff74a5dc, transparent),
+    linear-gradient(to top right, $blue, transparent);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 15px;
+  padding: 1.5rem;
+  overflow-y: scroll;
+  font-weight: bold;
+  font-size: 1.1.5rem;
+  display: none;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    &-titles {
+      display: flex;
+      align-items: center;
+      span {
+        margin: 0 0.4rem;
+      }
+    }
+  }
+
+  .list-music-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.699);
+
+    audio {
+      display: none;
+    }
+    span {
+      font-size: 0.8rem;
+    }
+
+    &:hover {
+      color: $pink;
+      cursor: pointer;
+    }
+  }
+}
+
+.music-list::-webkit-scrollbar {
+  display: none;
+}
+
+// javascript classes
+.active {
+  color: $pink;
+}
+
+.show {
+  display: block;
 }
