@@ -38,11 +38,17 @@
         </section>
         <!-- music progress -->
         <section class="progress">
+          <audio
+            src="asset/audios/Mohsen Yeganeh - Behet Ghol Midam.mp3"
+            id="audio"
+          ></audio>
           <div class="progress__parent">
             <div class="progress__child"></div>
           </div>
-          <span class="progress__time" id="music-cureenttime">0:00</span>
-          <span class="progress__endtiem" id="music-time">3:04</span>
+          <div class="progress__timer">
+            <span class="current-time" id="current-time">0:00</span>
+            <span class="max-duration" id="max-duration">3:04</span>
+          </div>
         </section>
       </main>
     </section>
