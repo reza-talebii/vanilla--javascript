@@ -18,3 +18,5 @@ const listMusic = [
     image: "Mohsen Yeganeh - Behet Ghol Midam.jpg",
   },
 ];
+
+export { listMusic };
