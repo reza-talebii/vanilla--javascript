@@ -1,5 +1,5 @@
 import { listMusic } from "./list-music.js";
-const indexMusic = 0;
+let indexMusic = 0;
 
 const audio = document.querySelector("#audio");
 //*****CONTROLS BUTTONS*******
@@ -71,9 +71,20 @@ const showListMusic = () => {
   closeList.addEventListener("click", () => musicList.classList.remove("show"));
 };
 
+const prevMusic = () => {
+  indexMusic = indexMusic < 1 ? listMusic.length - 1 : --indexMusic;
+  loadMusic(indexMusic);
+  playMusic();
+};
+
+const nextMusic = () => {
+  indexMusic = indexMusic == 2 ? 0 : ++indexMusic;
+  loadMusic(indexMusic);
+  playMusic();
+};
 //*******EVENT LISTENER*******
 window.addEventListener("load", () => loadMusic(indexMusic));
 playBtn.addEventListener("click", playMusic);
 moreMusicBtn.addEventListener("click", showListMusic);
-// prevBtn.addEventListener("click", prevMusic);
-// nextBtn.addEventListener("click", nextMusic);
+prevBtn.addEventListener("click", prevMusic);
+nextBtn.addEventListener("click", nextMusic);
