@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!-- css style -->
+    <link rel="stylesheet" href="asset/styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="wrapper">
+      <section class="tab-bar">
+        <i class="material-icons">favorite_border</i>
+        <h4>Now Playing</h4>
+        <i class="material-icons">add</i>
+      </section>
+      <section class="music">
+        <!-- music image -->
+        <div class="music__img">
+          <img src="" alt="cover music" id="music-cove" />
+        </div>
+        <!-- music title -->
+        <div class="music__title">
+          <h1 id="music-name">-</h1>
+          <span id="artist-name">-</span>
+        </div>
+      </section>
+      <section class="progress">
+        <audio
+          src="asset/audios/Mohsen Yeganeh - Behet Ghol Midam.mp3"
+          id="audio"
+        ></audio>
+        <div class="progress__parent">
+          <div class="progress__child"></div>
+        </div>
+        <div class="progress__timer">
+          <span class="current-time" id="current-time">0:00</span>
+          <span class="max-duration" id="max-duration">3:04</span>
+        </div>
+      </section>
+      <section class="controls">
+        <i id="repeat-plist" class="material-icons" title="Playlist looped"
+          >repeat</i
+        >
+        <i id="prev" class="material-icons prev">fast_rewind</i>
+        <div class="play-pause">
+          <i class="material-icons play">play_arrow</i>
+        </div>
+        <i id="next" class="material-icons next">fast_forward</i>
+        <i id="more-music" class="material-icons">queue_music</i>
+      </section>
+      <!-- music list -->
+      <section class="music-list">
+        <!-- list header -->
+        <div class="music-list-header">
+          <!-- title -->
+          <div class="music-list-header-titles">
+            <i class="list material-icons">queue_music</i>
+            <span>Music List</span>
+          </div>
+          <i id="close-list" class="material-icons">close</i>
+        </div>
+        <!-- list music -->
+        <ul id="lists-music">
+          <li class="list-music-item active">
+            <div class="list-music-name">
+              <h4>Harley Bird - Home</h4>
+              <span>Jordan Scho</span>
+            </div>
+            <span id="list-music-time">0:00</span>
+          </li>
+          <li class="list-music-item">
+            <div class="list-music-name">
+              <h4>Harley Bird - Home</h4>
+              <span>Jordan Scho</span>
+            </div>
+            <span id="list-music-time">0:00</span>
+          </li>
+          <li class="list-music-item">
+            <div class="list-music-name">
+              <h4>Harley Bird - Home</h4>
+              <span>Jordan Scho</span>
+            </div>
+            <span id="list-music-time">0:00</span>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </body>
+  <script src="asset/scripts/app.js"></script>
+</html>
