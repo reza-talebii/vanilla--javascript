@@ -6,7 +6,7 @@ _Choose one of the brunch to see the projects_
 
 <!-- | :-: | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -->
 
-| 01 | [music Player](https://github.com/reza-talebii/vanilla--javascript/tree/Music-player() | [Live Demo](-) |
+| 01 | [Music Player](https://github.com/reza-talebii/vanilla--javascript/tree/Music-player) | [Live Demo](-) |
 
 <!-- | 03 | [Music player](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
 <!-- | 04 | [ Todo list ](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
