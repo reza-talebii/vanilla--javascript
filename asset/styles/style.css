@@ -3,20 +3,25 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Poppins";
 }
 
 body {
+  background-image: linear-gradient(
+    179.4deg,
+    rgba(132, 56, 122, 1) 14.6%,
+    rgba(190, 24, 49, 1) 104.7%
+  );
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 *::before,
@@ -37,22 +42,28 @@ i {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 350px;
   padding: 0 1.2rem;
   margin: 0.5rem 0;
   min-height: 100vh;
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9ce3ff), to(#ff74a4));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#9ce3ff),
+    to(#ff74a4)
+  );
   background: linear-gradient(#9ce3ff, #ff74a4);
   color: #fff;
 }
@@ -63,8 +74,8 @@ i {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   font-size: 1.1rem;
   padding-bottom: 3rem;
 }
@@ -75,11 +86,11 @@ i {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
@@ -90,10 +101,12 @@ i {
 .music__img img {
   border-radius: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
-  -webkit-box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163, -10px -10px 20px #e6f6ff;
-          box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163, -10px -10px 20px #e6f6ff;
+  -webkit-box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163,
+    -10px -10px 20px #e6f6ff;
+  box-shadow: 0 0 0 5px #ffffff, 0 0 2px #fff, 13px 13px 20px #31313163,
+    -10px -10px 20px #e6f6ff;
 }
 
 .music__title {
@@ -142,7 +155,7 @@ i {
   top: 50%;
   right: -5px;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background: inherit;
   opacity: 0;
   -webkit-transition: opacity 0.2s;
@@ -154,8 +167,8 @@ i {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   font-weight: bold;
   font-size: 0.8rem;
   padding: 0.4rem;
@@ -171,10 +184,10 @@ i {
   display: flex;
   width: 100%;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 1rem;
 }
 
@@ -193,15 +206,16 @@ i {
   display: flex;
   cursor: pointer;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border-radius: 50%;
   border: 1px solid #fff;
-  -webkit-box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e667c, -3px -3px 15px #f0ecec;
-          box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e667c, -3px -3px 15px #f0ecec;
+  -webkit-box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e667c,
+    -3px -3px 15px #f0ecec;
+  box-shadow: 0 0 2px #fff, 8px 8px 15px #ff5e667c, -3px -3px 15px #f0ecec;
 }
 
 .controls .play {
@@ -212,8 +226,18 @@ i {
 
 .music-list {
   color: #515c6f;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9ce3ff), to(transparent)), -webkit-gradient(linear, right bottom, left top, from(#ff74a5dc), to(transparent)), -webkit-gradient(linear, left bottom, right top, from(#9ce3ff), to(transparent));
-  background: linear-gradient(#9ce3ff, transparent), linear-gradient(to top left, #ff74a5dc, transparent), linear-gradient(to top right, #9ce3ff, transparent);
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#9ce3ff),
+      to(transparent)
+    ),
+    -webkit-gradient(linear, right bottom, left top, from(#ff74a5dc), to(transparent)),
+    -webkit-gradient(linear, left bottom, right top, from(#9ce3ff), to(transparent));
+  background: linear-gradient(#9ce3ff, transparent),
+    linear-gradient(to top left, #ff74a5dc, transparent),
+    linear-gradient(to top right, #9ce3ff, transparent);
   position: absolute;
   bottom: -21rem;
   left: 0;
@@ -233,11 +257,11 @@ i {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -248,8 +272,8 @@ i {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .music-list-header-titles span {
@@ -261,11 +285,11 @@ i {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 1rem 0;
   padding: 0.3rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.699);
