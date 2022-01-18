@@ -1,5 +1,5 @@
 import { listMusic } from "./list-music.js";
-let indexMusic = 0;
+let indexMusic = localStorage.getItem("index") || 0;
 const audio = document.querySelector("#audio");
 
 //CONTROLS VARIABLE
@@ -33,6 +33,7 @@ const loadMusic = (index) => {
 };
 
 const playMusic = () => {
+  localStorage.setItem("index", indexMusic);
   if (audio.paused) {
     audio.play();
     playBtn.innerHTML = "pause";
