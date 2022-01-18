@@ -41,7 +41,7 @@ const creatItemMusicList = () => {
   const listMusics = document.querySelector("#lists-music");
   listMusics.innerHTML = "";
   //CREAT ITEM
-  listMusic.map((music) => {
+  listMusic.map((music, index) => {
     const item = document.createElement("li");
     item.className = "list-music-item";
     item.innerHTML = `
@@ -54,7 +54,19 @@ const creatItemMusicList = () => {
     </div>
     <span id="list-music-time">${music.time.minute}:${music.time.seconde}</span>
     `;
-    //played item
+    //SELECT ITEM MUSIC
+    item.addEventListener("click", () => {
+      loadMusic(index);
+      playMusic();
+      //CLEAR CLASS ACTIVE IN ITEMS
+      document.querySelectorAll(".list-music-item").forEach((item) => {
+        item.classList.remove("active");
+      });
+      // ADD CLASS ACTIVE IN CLICKED ITEM
+      item.classList.add("active");
+    });
+
+    //played item active
     if (music.id == audio.dataset.id) item.classList.add("active");
 
     listMusics.append(item);
@@ -82,9 +94,13 @@ const nextMusic = () => {
   loadMusic(indexMusic);
   playMusic();
 };
+
+// const repeatList = () => {};
+
 //*******EVENT LISTENER*******
 window.addEventListener("load", () => loadMusic(indexMusic));
 playBtn.addEventListener("click", playMusic);
 moreMusicBtn.addEventListener("click", showListMusic);
 prevBtn.addEventListener("click", prevMusic);
 nextBtn.addEventListener("click", nextMusic);
+// repeatListBtn.addEventListener("click",repeatList)
