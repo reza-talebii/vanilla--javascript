@@ -35,10 +35,13 @@ const playMusic = () => {
   }
 };
 
-const showListMusic = ()=>{}
+const showListMusic = () => {
+  const musicList = document.querySelector(".music-list");
+  musicList.classList.add("show");
+};
 //*******EVENT LISTENER*******
 window.addEventListener("load", () => loadMusic(indexMusic));
-moreMusicBtn.addEventListener("click",showListMusic);
+moreMusicBtn.addEventListener("click", showListMusic);
 // prevBtn.addEventListener("click",prevMusic)
 // nextBtn.addEventListener("click",nextMusic)
 playBtn.addEventListener("click", playMusic);

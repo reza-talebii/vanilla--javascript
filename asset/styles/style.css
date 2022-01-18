@@ -30,6 +30,7 @@ i {
 }
 
 .wrapper {
+  overflow: hidden;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -209,7 +210,7 @@ i {
   background: -webkit-gradient(linear, left top, left bottom, from(#9ce3ff), to(transparent)), -webkit-gradient(linear, right bottom, left top, from(#ff74a5dc), to(transparent)), -webkit-gradient(linear, left bottom, right top, from(#9ce3ff), to(transparent));
   background: linear-gradient(#9ce3ff, transparent), linear-gradient(to top left, #ff74a5dc, transparent), linear-gradient(to top right, #9ce3ff, transparent);
   position: absolute;
-  bottom: 0;
+  bottom: -21rem;
   left: 0;
   width: 100%;
   border-radius: 15px;
@@ -218,7 +219,8 @@ i {
   font-weight: bold;
   font-size: 1.1rem;
   height: 330px;
-  display: none;
+  -webkit-transition: bottom 0.4s;
+  transition: bottom 0.4s;
 }
 
 .music-list-header {
@@ -286,6 +288,6 @@ i {
 }
 
 .show {
-  display: block;
+  bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */
