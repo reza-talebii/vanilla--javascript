@@ -44,7 +44,7 @@ i {
   width: 350px;
   padding: 0 1.2rem;
   margin: 0.5rem 0;
-  min-height: 98vh;
+  min-height: 100vh;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
   background: linear-gradient($blue, $pink);
@@ -234,4 +234,20 @@ i {
 
 .show {
   bottom: 0;
+}
+
+//media quarry
+@media only screen and (max-width: 545px) {
+  .wrapper {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 1.5rem;
+  }
+  .tab-bar {
+    padding-bottom: 2rem;
+  }
+  .music__title {
+    margin-top: 1rem;
+  }
 }
