@@ -1,26 +1,32 @@
 import { listMusic } from "./list-music.js";
 let indexMusic = 0;
-
 const audio = document.querySelector("#audio");
-//*****CONTROLS BUTTONS*******
+
+//CONTROLS VARIABLE
 const playBtn = document.querySelector(".play"),
   prevBtn = document.querySelector("#prev"),
   nextBtn = document.querySelector("#next"),
   repeatListBtn = document.querySelector("#repeat-plist"),
   moreMusicBtn = document.querySelector("#more-music");
+//PROGRESS VARIABLE
+const ProgressParent = document.querySelector(".progress__parent");
+const progressChild = document.querySelector(".progress__child");
 
 //*******FUNCTIONS*******
 const loadMusic = (index) => {
   const music = listMusic[index];
   const coverMusic = document.querySelector("#music-cove"),
     musicName = document.querySelector("#music-name"),
-    artistName = document.querySelector("#artist-name");
+    artistName = document.querySelector("#artist-name"),
+    duration = document.querySelector("#max-duration");
   //MUSIC COVER
   coverMusic.src = `asset/images/${music.image}`;
   // MUSIC NAME
   musicName.innerHTML = music.name;
   // MUSIC ARTIST NAME
   artistName.innerHTML = music.artist;
+  //MUSIC DURATION
+  duration.innerHTML = `${listMusic[index].time.minute}:${listMusic[index].time.seconde}`;
   // MUSIC ADDRESS
   audio.src = `asset/audios/${music.src}`;
   audio.setAttribute("data-id", music.id);
@@ -110,8 +116,14 @@ const timeUpdate = () => {
 };
 
 const progressTime = () => {
-  const progress = document.querySelector(".progress__child");
-  progress.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+  progressChild.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+};
+
+const changeProgressTime = (e) => {
+  let progressWidth = ProgressParent.clientWidth; //getting width of progress bar
+  let clickedOffsetX = e.offsetX; //getting offset x value
+  let songDuration = audio.duration; //getting song total duration
+  audio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
 };
 
 //*******EVENT LISTENER*******
@@ -121,4 +133,5 @@ moreMusicBtn.addEventListener("click", showListMusic);
 prevBtn.addEventListener("click", prevMusic);
 nextBtn.addEventListener("click", nextMusic);
 audio.addEventListener("timeupdate", timeUpdate);
+ProgressParent.addEventListener("click", changeProgressTime);
 // repeatListBtn.addEventListener("click",repeatList)
