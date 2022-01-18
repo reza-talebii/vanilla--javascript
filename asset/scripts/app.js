@@ -95,7 +95,18 @@ const nextMusic = () => {
   playMusic();
 };
 
-// const repeatList = () => {};
+// ****PROGRESS TIME****
+const timeUpdate = () => {
+  const currentTime = document.querySelector("#current-time");
+  let seconds = audio.currentTime;
+  let minutes = Math.floor(seconds / 60);
+  minutes = minutes >= 10 ? minutes : "0" + minutes;
+  seconds = Math.floor(seconds % 60);
+  seconds = seconds >= 10 ? seconds : "0" + seconds;
+  currentTime.innerHTML = `${minutes}:${seconds}`;
+};
+
+const
 
 //*******EVENT LISTENER*******
 window.addEventListener("load", () => loadMusic(indexMusic));
@@ -103,4 +114,5 @@ playBtn.addEventListener("click", playMusic);
 moreMusicBtn.addEventListener("click", showListMusic);
 prevBtn.addEventListener("click", prevMusic);
 nextBtn.addEventListener("click", nextMusic);
+audio.addEventListener("timeupdate", timeUpdate);
 // repeatListBtn.addEventListener("click",repeatList)
