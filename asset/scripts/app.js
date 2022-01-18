@@ -155,22 +155,25 @@ const changeProgressTime = (e) => {
 };
 
 //REPEAT LIST
-let indexClickReaped = 0;
 const repeatList = () => {
-  //rest index
-  if (indexClickReaped == 4) indexClickReaped = 0;
-  switch (++indexClickReaped) {
-    case 1:
+  const textBtn = repeatListBtn.innerText;
+
+  switch (textBtn) {
+    case "repeat":
       repeatListBtn.innerHTML = "repeat_one";
       audio.setAttribute("loop", true);
       audio.removeEventListener("click", endMusic);
       break;
-    case 2:
+    case "repeat_one":
       repeatListBtn.innerHTML = "shuffle";
-      indexMusic = Math.trunc(Math.random() * listMusic.length);
+      let randIndex = Math.floor(Math.random() * listMusic.length);
+      do {
+        randIndex = Math.floor(Math.random() * listMusic.length);
+      } while (indexMusic == randIndex);
+      indexMusic = randIndex;
       audio.removeAttribute("loop");
       break;
-    case 3:
+    case "shuffle":
       repeatListBtn.innerHTML = "repeat";
       audio.removeAttribute("loop");
       break;
@@ -192,3 +195,6 @@ audio.addEventListener("timeupdate", timeUpdate);
 ProgressParent.addEventListener("click", changeProgressTime);
 repeatListBtn.addEventListener("click", repeatList);
 audio.addEventListener("ended", endMusic);
+
+
+//line 169 have bug it is'n random
