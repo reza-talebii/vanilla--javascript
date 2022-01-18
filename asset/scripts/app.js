@@ -99,14 +99,20 @@ const nextMusic = () => {
 const timeUpdate = () => {
   const currentTime = document.querySelector("#current-time");
   let seconds = audio.currentTime;
+  //TIME FORMAT
   let minutes = Math.floor(seconds / 60);
   minutes = minutes >= 10 ? minutes : "0" + minutes;
   seconds = Math.floor(seconds % 60);
   seconds = seconds >= 10 ? seconds : "0" + seconds;
+  //SHOW TIME
   currentTime.innerHTML = `${minutes}:${seconds}`;
+  progressTime();
 };
 
-const
+const progressTime = () => {
+  const progress = document.querySelector(".progress__child");
+  progress.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+};
 
 //*******EVENT LISTENER*******
 window.addEventListener("load", () => loadMusic(indexMusic));
