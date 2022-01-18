@@ -126,6 +126,29 @@ const changeProgressTime = (e) => {
   audio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
 };
 
+//REPEAT LIST
+let indexClickReaped = 0;
+const repeatList = () => {
+  if (i == 4) i = 0;
+  switch (++i) {
+    case 1:
+      repeatListBtn.innerHTML = "repeat_one";
+      audio.setAttribute("loop", true);
+      break;
+    case 2:
+      repeatListBtn.innerHTML = "shuffle";
+      indexMusic = Math.trunc(Math.random() * listMusic.length);
+      break;
+    case 3:
+      repeatListBtn.innerHTML = "repeat";
+      audio.removeAttribute("loop");
+      break;
+
+    default:
+      break;
+  }
+};
+
 //*******EVENT LISTENER*******
 window.addEventListener("load", () => loadMusic(indexMusic));
 playBtn.addEventListener("click", playMusic);
@@ -134,4 +157,5 @@ prevBtn.addEventListener("click", prevMusic);
 nextBtn.addEventListener("click", nextMusic);
 audio.addEventListener("timeupdate", timeUpdate);
 ProgressParent.addEventListener("click", changeProgressTime);
-// repeatListBtn.addEventListener("click",repeatList)
+repeatListBtn.addEventListener("click", repeatList);
+audio.addEventListener("end", nextMusic);

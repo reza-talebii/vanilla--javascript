@@ -13,7 +13,7 @@ const listMusic = [
     artist: "ho3in",
     src: "Ho3ein - Khafan.mp3",
     image: "Ho3ein - Khafan.jpg",
-    time: { minute: 3, seconde: 37 },
+    time: { minute: 4, seconde: 32 },
   },
   {
     id: Math.random() * 1000,
@@ -21,7 +21,7 @@ const listMusic = [
     artist: "Mohsen Yeganeh ",
     src: "Mohsen Yeganeh - Behet Ghol Midam.mp3",
     image: "Mohsen Yeganeh - Behet Ghol Midam.jpg",
-    time: { minute: 4, seconde: 32 },
+    time: { minute: 3, seconde: 37 },
   },
 ];
 
