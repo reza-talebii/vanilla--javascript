@@ -129,15 +129,18 @@ const changeProgressTime = (e) => {
 //REPEAT LIST
 let indexClickReaped = 0;
 const repeatList = () => {
-  if (i == 4) i = 0;
-  switch (++i) {
+  //rest index
+  if (indexClickReaped == 4) indexClickReaped = 0;
+  switch (++indexClickReaped) {
     case 1:
       repeatListBtn.innerHTML = "repeat_one";
       audio.setAttribute("loop", true);
+      audio.removeEventListener("click", endMusic);
       break;
     case 2:
       repeatListBtn.innerHTML = "shuffle";
       indexMusic = Math.trunc(Math.random() * listMusic.length);
+      audio.removeAttribute("loop");
       break;
     case 3:
       repeatListBtn.innerHTML = "repeat";
@@ -149,6 +152,8 @@ const repeatList = () => {
   }
 };
 
+const endMusic = () => nextMusic();
+
 //*******EVENT LISTENER*******
 window.addEventListener("load", () => loadMusic(indexMusic));
 playBtn.addEventListener("click", playMusic);
@@ -158,4 +163,4 @@ nextBtn.addEventListener("click", nextMusic);
 audio.addEventListener("timeupdate", timeUpdate);
 ProgressParent.addEventListener("click", changeProgressTime);
 repeatListBtn.addEventListener("click", repeatList);
-audio.addEventListener("end", nextMusic);
+audio.addEventListener("ended", endMusic);
