@@ -23,6 +23,7 @@ const loadMusic = (index) => {
   artistName.innerHTML = music.artist;
   // MUSIC ADDRESS
   audio.src = `asset/audios/${music.src}`;
+  audio.setAttribute("data-id", music.id);
 };
 
 const playMusic = () => {
@@ -35,14 +36,14 @@ const playMusic = () => {
   }
 };
 
-//CREAT ITEM OF MUSIC LIST *bug*
+//CREAT ITEM OF MUSIC LIST
 const creatItemMusicList = () => {
   const listMusics = document.querySelector("#lists-music");
   listMusics.innerHTML = "";
-
+  //CREAT ITEM
   listMusic.map((music) => {
     const item = document.createElement("li");
-    item.className = "list-music-item active";
+    item.className = "list-music-item";
     item.innerHTML = `
     <audio
       src="asset/audios/${music.src}" class="music-list-1">
@@ -51,8 +52,10 @@ const creatItemMusicList = () => {
       <h4>${music.name}</h4>
       <span>${music.artist}</span>
     </div>
-    <span id="list-music-time">0:00</span>
+    <span id="list-music-time">${music.time.minute}:${music.time.seconde}</span>
     `;
+    //played item
+    if (music.id == audio.dataset.id) item.classList.add("active");
 
     listMusics.append(item);
   });
@@ -72,5 +75,5 @@ const showListMusic = () => {
 window.addEventListener("load", () => loadMusic(indexMusic));
 playBtn.addEventListener("click", playMusic);
 moreMusicBtn.addEventListener("click", showListMusic);
-// prevBtn.addEventListener("click",prevMusic)
-// nextBtn.addEventListener("click",nextMusic)
+// prevBtn.addEventListener("click", prevMusic);
+// nextBtn.addEventListener("click", nextMusic);
