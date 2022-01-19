@@ -6,14 +6,14 @@ _Choose one of the brunch to see the projects_
 
 <!-- | :-: | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -->
 
-| 01 | [Music Player](https://github.com/reza-talebii/vanilla--javascript/tree/Music-player) | [Live Demo](-) |
+| 01 | [ Todo list ](https://github.com/reza-talebii/vanilla--javascript/tree/TodoList) | [Live Demo](-) |
 
-<!-- | 03 | [Music player](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
-<!-- | 04 | [ Todo list ](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
-<!-- | 03 | [ Hangman ](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
+| 02 | [Music Player](https://github.com/reza-talebii/vanilla--javascript/tree/Music-player) | [Live Demo](-) |
 
-| 02 | [Rock Paper Scissors](https://github.com/reza-talebii/vanilla--javascript/tree/Rock-Paper-Scissors) | [Live Demo](-) |
+| 03 | [ Hangman ](https://github.com/reza-talebii/guess-word) | [Live Demo](-) |
 
-<!-- | 05 | [ Tic Tac Toe](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
-<!-- | 06 | [ Weather App](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
+| 04 | [Rock Paper Scissors](https://github.com/reza-talebii/vanilla--javascript/tree/Rock-Paper-Scissors) | [Live Demo](-) |
+
+<!-- | 05 | [ Weather App](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
+<!-- | 06 | [ Tic Tac Toe](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
 <!-- | 07 | [Recipe App](https://github.com/reza-talebii/vanilla--javascript/tree/Tab-project) | [Live Demo](-) | -->
