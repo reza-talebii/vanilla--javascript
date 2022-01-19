@@ -1,10 +1,10 @@
 let todoList = JSON.parse(localStorage.getItem("todo")) || [];
 
-//VARIABLE
+//******VARIABLE*******
 const inputAdd = document.querySelector("#input"),
   btnAdd = document.querySelector("#add-task");
-console.log(todoList);
-//FUNCTIONS
+
+//*****FUNCTIONS******
 const addInput = () => {
   const taskValue = inputAdd.value.trim();
   if (taskValue.length > 0) {
@@ -22,7 +22,7 @@ const addInput = () => {
   }
 };
 
-//CREAT ITEM ELEMENT IN DOM
+//creat item element
 const creatItemElement = () => {
   const listContainer = document.querySelector("#list");
   todoList.forEach((element) => {
@@ -38,3 +38,4 @@ const creatItemElement = () => {
 };
 
 btnAdd.addEventListener("click", addInput);
+creatItemElement();
