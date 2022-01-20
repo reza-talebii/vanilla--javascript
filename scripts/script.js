@@ -1,3 +1,4 @@
+import { getDate, hourAndMinute } from "./components/date.js";
 // const apiKey = "bc32333c0d19013bb68a06c24eb3e01d";
 
 // const d = async () => {
@@ -9,3 +10,6 @@
 // };
 
 // console.log(d());
+
+hourAndMinute();
+getDate();
