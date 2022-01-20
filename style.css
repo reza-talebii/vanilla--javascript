@@ -87,16 +87,7 @@ body {
   justify-content: center;
   overflow-y: hidden;
 }
-/* Hide scrollbar for Chrome, Safari and Opera */
-.future-forecast::-webkit-scrollbar {
-  display: none;
-}
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.future-forecast {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 .future-forecast .today {
   display: flex;
   align-items: center;
