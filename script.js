@@ -14,6 +14,7 @@ let player = "",
 //dom variable
 const cells = [...document.querySelectorAll(".cell")];
 const options = document.querySelector(".options");
+const playersBox = document.querySelector(".players");
 
 //functions
 const selectOptions = (e) => {
@@ -24,6 +25,8 @@ const selectOptions = (e) => {
   } else {
     AI = "X";
     player = "O";
+    //toggle class active player
+    toggleActive();
   }
   // hide boxes
   document.querySelector(".select-box").classList.toggle("hide");
@@ -36,6 +39,8 @@ const clickPLayer = () => {
   cells.map((cell) => {
     cell.addEventListener("click", () => {
       cell.innerHTML = player;
+      //toggle class active player
+      toggleActive();
       //Specify that it is clicked
       cell.setAttribute("data-click", true);
       //To check winIndex
@@ -45,7 +50,7 @@ const clickPLayer = () => {
       //check player win
       if (checkWinner(player)) resultGame(player);
       //AI select
-      setTimeout(clickAI, 200);
+      setTimeout(clickAI, 500);
     });
   });
 };
@@ -56,7 +61,8 @@ const clickAI = () => {
       ".cell[data-click='false']"
     );
     const randomCell = Math.trunc(Math.random() * cellNotClicked.length);
-
+    //toggle class active player
+    toggleActive();
     cellNotClicked[randomCell].innerHTML = AI;
     //Specify that it is clicked
     cellNotClicked[randomCell].setAttribute("data-click", true);
@@ -70,6 +76,8 @@ const clickAI = () => {
     checkWinner("draw");
   }
 };
+
+const toggleActive = () => playersBox.classList.toggle("active");
 
 const checkWinner = (player) => {
   return WinIndex.some((arr) => {
