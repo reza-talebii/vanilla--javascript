@@ -26,8 +26,8 @@ const selectOptions = (e) => {
     player = "O";
   }
   // hide boxes
-  document.querySelector(".select-box").classList.add("hide");
-  document.querySelector(".play-board").classList.add("show");
+  document.querySelector(".select-box").classList.toggle("hide");
+  document.querySelector(".play-board").classList.toggle("show");
 
   clickPLayer();
 };
@@ -43,9 +43,7 @@ const clickPLayer = () => {
       //disable click again
       cell.style.pointerEvents = "none";
       //check player win
-      if (checkWinner(player)) {
-        console.log("player Win");
-      }
+      if (checkWinner(player)) resultGame(player);
       //AI select
       setTimeout(clickAI, 200);
     });
@@ -67,22 +65,34 @@ const clickAI = () => {
     //disable click again
     cellNotClicked[randomCell].style.pointerEvents = "none";
     //check AI win
-    if (checkWinner(AI)) {
-      console.log(AI + "win");
-    }
+    if (checkWinner(AI)) resultGame(AI);
   } catch {
-    console.log("draw");
+    checkWinner("draw");
   }
 };
 
 const checkWinner = (player) => {
-  const result = WinIndex.some((arr) => {
+  return WinIndex.some((arr) => {
     return arr.every((index) => {
       return cells[index].classList.contains(`playerClick${player}`);
     });
   });
+};
 
-  return result;
+const resultGame = (result) => {
+  const resultContainer = document.querySelector(".result-box");
+  const resultTextContainer = document.querySelector(".won-text");
+  const resetBtn = document.querySelector(".btn button");
+  //display container
+  resultContainer.classList.toggle("show");
+  document.querySelector(".play-board").classList.add("hide");
+  //result message
+  resultTextContainer.innerHTML =
+    result == "draw"
+      ? `Match has been drawn!`
+      : `Player ${result} won the game!`;
+  //reset game
+  resetBtn.addEventListener("click", () => window.location.reload());
 };
 
 //event
