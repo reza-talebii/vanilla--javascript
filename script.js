@@ -16,6 +16,7 @@ const options = document.querySelector(".options");
 
 //functions
 const selectOptions = (e) => {
+  //Identify the player
   if (e.target.className == "playerX") {
     player = "X";
     AI = "O";
@@ -23,14 +24,28 @@ const selectOptions = (e) => {
     AI = "X";
     player = "O";
   }
+  // hide boxes
   document.querySelector(".select-box").classList.add("hide");
   document.querySelector(".play-board").classList.add("show");
-  clickCells()
+
+  clickCells();
 };
 
-const clickCells = ()=>{
+const clickPLayer = () => {
+  const cells = [...document.querySelectorAll(".cell")];
 
-}
+  cells.map((cell) => {
+    cell.addEventListener("click", () => {
+      cell.innerHTML = player;
+      //Specify that it is clicked
+      cell.setAttribute("data-click", true);
+      //To check winIndex
+      cell.classList.add(`player${player}`);
+      //AI select
+      setTimeout(selectAI, 200);
+    });
+  });
+};
 
 //event
 options.addEventListener("click", selectOptions);
