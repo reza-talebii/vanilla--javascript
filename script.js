@@ -28,7 +28,7 @@ const selectOptions = (e) => {
   document.querySelector(".select-box").classList.add("hide");
   document.querySelector(".play-board").classList.add("show");
 
-  clickCells();
+  clickPLayer();
 };
 
 const clickPLayer = () => {
@@ -41,11 +41,31 @@ const clickPLayer = () => {
       cell.setAttribute("data-click", true);
       //To check winIndex
       cell.classList.add(`player${player}`);
+      //disable click again
+      cell.style.pointerEvents = "none";
       //AI select
-      setTimeout(selectAI, 200);
+      setTimeout(clickAI, 200);
     });
   });
 };
 
+const clickAI = () => {
+  try {
+    const cellNotClicked = document.querySelectorAll(
+      ".cell[data-click='false']"
+    );
+    const randomCell = Math.trunc(Math.random() * cellNotClicked.length);
+
+    cellNotClicked[randomCell].innerHTML = AI;
+    //Specify that it is clicked
+    cellNotClicked[randomCell].setAttribute("data-click", true);
+    //To check winIndex
+    cellNotClicked[randomCell].classList.add(`player${player}`);
+    //disable click again
+    cellNotClicked[randomCell].style.pointerEvents = "none";
+  } catch {
+    console.log("draw");
+  }
+};
 //event
 options.addEventListener("click", selectOptions);
