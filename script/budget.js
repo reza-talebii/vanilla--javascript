@@ -1,7 +1,11 @@
 const tab_bar = document.querySelector(".toggle");
+//list container variable
 const incomeContainer = document.querySelector("#income");
 const expensesContainer = document.querySelector("#expense");
 const allContainer = document.querySelector("#all");
+// form element variable
+const btnExpense = document.querySelector(".add-expense");
+const btnIncome = document.querySelector(".add-income");
 
 //show select container list
 const showContainer = (type) => {
@@ -25,4 +29,25 @@ const selectTab_bar = (e) => {
   showContainer(selectContent);
 };
 
+const addExpense = (e) => {
+  console.log(e);
+};
+
+const checkInputValid = (type) => {
+  const inputAmount = document.querySelector(`#${type}-amount-input`).value;
+  const inputTitle = document.querySelector(`#${type}-title-input`).value;
+  //check empty input
+  return inputAmount == "" && inputTitle == "" ? false : true;
+};
+
+const addIncome = () => {
+  if (checkInputValid("income")) {
+    
+  } else {
+    return false;
+  }
+};
+
 tab_bar.addEventListener("click", (e) => selectTab_bar(e));
+btnExpense.addEventListener("click", addExpense);
+btnIncome.addEventListener("click", addIncome);
