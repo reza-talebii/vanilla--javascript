@@ -1,3 +1,5 @@
+const ExpenseIncomeList = localStorage.getItem("ExpenseIncome") || [];
+
 const tab_bar = document.querySelector(".toggle");
 //list container variable
 const incomeContainer = document.querySelector("#income");
@@ -30,21 +32,23 @@ const selectTab_bar = (e) => {
 };
 
 const addExpense = (e) => {
-  console.log(e);
-};
-
-const checkInputValid = (type) => {
-  const inputAmount = document.querySelector(`#${type}-amount-input`).value;
-  const inputTitle = document.querySelector(`#${type}-title-input`).value;
+  const inputAmount = document.querySelector(`#income-amount-input`).value;
+  const inputTitle = document.querySelector(`#income-title-input`).value;
   //check empty input
-  return inputAmount == "" && inputTitle == "" ? false : true;
+  if (inputAmount == "" && inputTitle == "") return;
+  else {
+    
+  }
+
 };
 
 const addIncome = () => {
-  if (checkInputValid("income")) {
+  const inputAmount = document.querySelector(`#income-amount-input`).value;
+  const inputTitle = document.querySelector(`#income-title-input`).value;
+  //check empty input
+  if (inputAmount == "" && inputTitle == "") return;
+  else {
     
-  } else {
-    return false;
   }
 };
 
