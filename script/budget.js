@@ -1,4 +1,5 @@
-const ExpenseIncomeList = localStorage.getItem("ExpenseIncome") || [];
+const expenseIncomeList =
+  JSON.parse(localStorage.getItem("ExpenseIncome")) || [];
 
 const tab_bar = document.querySelector(".toggle");
 //list container variable
@@ -31,24 +32,51 @@ const selectTab_bar = (e) => {
   showContainer(selectContent);
 };
 
-const addExpense = (e) => {
-  const inputAmount = document.querySelector(`#income-amount-input`).value;
-  const inputTitle = document.querySelector(`#income-title-input`).value;
-  //check empty input
-  if (inputAmount == "" && inputTitle == "") return;
-  else {
-    
-  }
+//push in list and save in localStorage
+const saveDate = (newList) => {
+  expenseIncomeList.push(newList);
+  localStorage.setItem("ExpenseIncome", JSON.stringify(expenseIncomeList));
+};
 
+const addExpense = () => {
+  const inputAmount = document.querySelector(`#income-amount-input`);
+  const inputTitle = document.querySelector(`#income-title-input`);
+  const amountValue = inputAmount.value;
+  const titleValue = inputTitle.value;
+  //check empty input
+  if (amountValue == "" && titleValue == "") return;
+  else {
+    const newList = {
+      type: "expense",
+      title: inputTitle,
+      amount: titleValue,
+    };
+
+    saveDate(newList);
+
+    //clear inputs value
+    inputAmount.value = "";
+    inputTitle.value = "";
+  }
 };
 
 const addIncome = () => {
-  const inputAmount = document.querySelector(`#income-amount-input`).value;
-  const inputTitle = document.querySelector(`#income-title-input`).value;
+  const inputAmount = document.querySelector(`#income-amount-input`);
+  const inputTitle = document.querySelector(`#income-title-input`);
+  const amountValue = inputAmount.value;
+  const titleValue = inputTitle.value;
   //check empty input
-  if (inputAmount == "" && inputTitle == "") return;
+  if (amountValue == "" && titleValue == "") return;
   else {
-    
+    const newList = {
+      type: "income",
+      title: titleValue,
+      amount: amountValue,
+    };
+    saveDate(newList);
+    //clear inputs value
+    inputAmount.value = "";
+    inputTitle.value = "";
   }
 };
 
