@@ -10,7 +10,10 @@ const showContainer = (type) => {
   type.classList.remove("hide");
 };
 
-
+const activeTab_bar = (tabClicked) => {
+  [...tab_bar.children].forEach((tab) => tab.classList.remove("active"));
+  tabClicked.classList.add("active");
+};
 
 tab_bar.addEventListener("click", (e) => {
   const tabClicked = e.target.innerText.toLowerCase();
