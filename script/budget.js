@@ -147,6 +147,7 @@ const amountTotal = (type) => {
 };
 
 const calculateBalance = () => {
+  const balanceContainer = document.querySelector(".value");
   const getExpenseAmount = expenseIncomeList.filter(
     (item) => item.type == "expense"
   );
@@ -168,7 +169,15 @@ const calculateBalance = () => {
   const [sumIncome, sumOutcome] = sumIncomeOutCome();
   updateChart(sumIncome, sumOutcome);
 
-  document.querySelector(".value").innerHTML = `$ ${sumIncome - sumOutcome}`;
+  const calcBalance = sumIncome - sumOutcome;
+  //color balance
+  if (calcBalance < 0) {
+    balanceContainer.classList.add("red");
+  } else {
+    balanceContainer.classList.remove("red");
+  }
+
+  balanceContainer.innerHTML = `$${calcBalance}`;
 };
 
 window.addEventListener("load", loadList);
