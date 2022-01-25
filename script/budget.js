@@ -10,6 +10,20 @@ const allContainer = document.querySelector("#all");
 const btnExpense = document.querySelector(".add-expense");
 const btnIncome = document.querySelector(".add-income");
 
+// get list show in DOM
+const getList = () => {
+  const filterExpense = expenseIncomeList.filter(
+    (item) => item.type == "expense"
+  );
+
+  const filterIncome = expenseIncomeList.filter(
+    (item) => item.type == "income"
+  );
+
+  showAllList(expenseIncomeList);
+  showExpenses(filterExpense);
+  showIncome(filterIncome);
+};
 //show select container list
 const showContainer = (type) => {
   incomeContainer.classList.add("hide");
@@ -80,6 +94,7 @@ const addIncome = () => {
   }
 };
 
+window.addEventListener("load", getList);
 tab_bar.addEventListener("click", (e) => selectTab_bar(e));
 btnExpense.addEventListener("click", addExpense);
 btnIncome.addEventListener("click", addIncome);
