@@ -12,28 +12,30 @@ const btnIncome = document.querySelector(".add-income");
 
 // load list and show in DOM
 const loadList = () => {
-  showDOMlist();
   showDOMlist("expense", expensesContainer);
   showDOMlist("income", incomeContainer);
+  showDOMlist();
   amountTotal("expense");
   amountTotal("income");
   calculateBalance();
 };
 
+//creat item and show in dom
 const showDOMlist = (type = "all", container = allContainer) => {
   const listAll = container.querySelector(".list");
   let list = expenseIncomeList;
-
   // CHECK TYPE AND FILTER
-  list =
-    type == "expense"
-      ? expenseIncomeList.filter((item) => item.type == "expense")
-      : expenseIncomeList.filter((item) => item.type == "income");
+  if (type == "expense") {
+    list = expenseIncomeList.filter((item) => item.type == "expense");
+  }
+  if (type == "income") {
+    list = expenseIncomeList.filter((item) => item.type == "income");
+  }
 
   //clear container
   listAll.innerHTML = "";
 
-  list.forEach((element) => {
+  list.forEach((element, index) => {
     //creat item
     const item = document.createElement("li");
     // add class
@@ -41,7 +43,7 @@ const showDOMlist = (type = "all", container = allContainer) => {
     item.innerHTML = `
     <div class="entry">${element.title}: $${element.amount}</div>
     <div id="edit"></div>
-    <div id="delete"></div>
+      <div id="delete" data-id="${index}"></div>
     `;
     //append item
     listAll.append(item);
@@ -163,8 +165,8 @@ const calculateBalance = () => {
     );
     return [income, outcome];
   };
-
   const [sumIncome, sumOutcome] = sumIncomeOutCome();
+  updateChart(sumIncome, sumOutcome);
 
   document.querySelector(".value").innerHTML = `$ ${sumIncome - sumOutcome}`;
 };
