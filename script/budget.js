@@ -15,6 +15,8 @@ const loadList = () => {
   showDOMlist();
   showDOMlist("expense", expensesContainer);
   showDOMlist("income", incomeContainer);
+  amountTotal("expense");
+  amountTotal("income");
 };
 
 const showDOMlist = (type = "all", container = allContainer) => {
@@ -96,6 +98,8 @@ const addExpense = () => {
   }
   //show in dom
   loadList();
+  //add total amount
+  amountTotal("expense");
 };
 
 const addIncome = () => {
@@ -118,6 +122,23 @@ const addIncome = () => {
   }
   //show in dom
   loadList();
+  //add total amount
+  amountTotal("income");
+};
+
+//show total expense and income
+const amountTotal = (type) => {
+  const amountBox = document.querySelector(`.${type}-total`);
+  const typeList = expenseIncomeList.filter((item) => item.type == type);
+
+  const sumAmount = typeList.reduce(
+    (sum, item) => sum + Number(item.amount),
+    0
+  );
+
+  amountBox.innerHTML = `<small>$</small>${sumAmount}`;
+
+  console.log(typeList, type);
 };
 
 window.addEventListener("load", loadList);

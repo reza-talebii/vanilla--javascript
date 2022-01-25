@@ -112,7 +112,7 @@ input[type="number"] {
   color: #fff;
   opacity: 0.5;
 }
-.budget-header .account .outcome .outcome-total {
+.budget-header .account .outcome .expense-total {
   color: #f0624d;
   font-family: "Gilroy Bold";
 }
