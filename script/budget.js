@@ -17,6 +17,7 @@ const loadList = () => {
   showDOMlist("income", incomeContainer);
   amountTotal("expense");
   amountTotal("income");
+  calculateBalance();
 };
 
 const showDOMlist = (type = "all", container = allContainer) => {
@@ -100,6 +101,8 @@ const addExpense = () => {
   loadList();
   //add total amount
   amountTotal("expense");
+  //calculate Balance
+  calculateBalance();
 };
 
 const addIncome = () => {
@@ -124,6 +127,8 @@ const addIncome = () => {
   loadList();
   //add total amount
   amountTotal("income");
+  //calculate Balance
+  calculateBalance();
 };
 
 //show total expense and income
@@ -137,8 +142,31 @@ const amountTotal = (type) => {
   );
 
   amountBox.innerHTML = `<small>$</small>${sumAmount}`;
+};
 
-  console.log(typeList, type);
+const calculateBalance = () => {
+  const getExpenseAmount = expenseIncomeList.filter(
+    (item) => item.type == "expense"
+  );
+  const getIncomeAmount = expenseIncomeList.filter(
+    (item) => item.type == "income"
+  );
+
+  const sumIncomeOutCome = () => {
+    const income = getIncomeAmount.reduce(
+      (sum, item) => sum + Number(item.amount),
+      0
+    );
+    const outcome = getExpenseAmount.reduce(
+      (sum, item) => sum + Number(item.amount),
+      0
+    );
+    return [income, outcome];
+  };
+
+  const [sumIncome, sumOutcome] = sumIncomeOutCome();
+
+  document.querySelector(".value").innerHTML = `$ ${sumIncome - sumOutcome}`;
 };
 
 window.addEventListener("load", loadList);
