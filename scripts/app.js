@@ -1,20 +1,41 @@
-let allRecipes = getAllRecipes()
-let filter = ''
-let filteredRecipes = filterRecipes(allRecipes, filter)
-const searchBar = document.querySelector('#search-bar')
+import addRecipeContainer from "./pages/add-recipe.js";
+import editRecipeContainer from "./pages/edit-recipe.js";
 
-loadMainPage()
+const recipeList = JSON.parse(localStorage.getItem("recipe")) || [];
 
-searchBar.addEventListener('input', function() {
-    filter = searchBar.value.toLowerCase()
-    filteredRecipes = filterRecipes(allRecipes, filter)
-    renderFilteredRecipes(filteredRecipes)
-})
-
-//Click to add a new recipe on its own page
-document.querySelector('#add-recipe-button').addEventListener('click', () => {  
-    const id = uuidv4()
-    window.location.assign(`./add-recipe.html#${id}`)
-})
+const appContainer = document.querySelector("#app");
+const addRecipeButton = document.querySelector("#add-recipe-button");
 
 
+
+
+//page
+const navTo = (url) => {
+  history.pushState(null, null, url);
+  router();
+};
+
+const router = () => {
+  const routes = [
+    {
+      path: "/",
+      view: console.log("home"),
+    },
+    {
+      path: "/add-recipes",
+      view: addRecipeContainer(),
+    },
+    {
+      path: "/edit-recipes",
+      view: editRecipeContainer(),
+    },
+  ];
+
+  const isMatch = routes.find((route) => route.path == location.pathname);
+  appContainer.innerHTML = isMatch.view;
+};
+
+addRecipeButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  navTo(e.target.href);
+});
