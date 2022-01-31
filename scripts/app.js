@@ -4,9 +4,12 @@ import editRecipeContainer from "./pages/edit-recipe.js";
 
 const recipeList = JSON.parse(localStorage.getItem("recipe")) || [];
 
-const showRecipe = () => {
+const showRecipe = (list) => {
   const recipesContainer = document.querySelector("#recipes-div");
-  recipeList.map((recipe, index) => {
+  //clear container
+  recipesContainer.innerHTML = "";
+
+  list.map((recipe, index) => {
     const item = document.createElement("a");
     item.href = "/edit-recipes";
     item.innerHTML = `
@@ -82,6 +85,17 @@ const saveData = (newRecipe) => {
   showRecipe();
 };
 
+// filter recipe
+const searchRecipe = (e) => {
+  const resultSearch = e.target.value.toLowerCase();
+
+  const filterList = recipeList.filter((item) =>
+    item.name.toLowerCase().includes(resultSearch)
+  );
+
+  showRecipe(filterList);
+};
+
 router();
 
 document.querySelector("#add-recipe-button").addEventListener("click", (e) => {
@@ -89,4 +103,6 @@ document.querySelector("#add-recipe-button").addEventListener("click", (e) => {
   navTo(e.target.href);
 });
 
-showRecipe();
+document.querySelector("#search-bar").addEventListener("input", searchRecipe);
+
+showRecipe(recipeList);
