@@ -1,6 +1,6 @@
 import homeContainer from "./pages/homePage.js";
 import addRecipeContainer from "./pages/add-recipe.js";
-import editRecipeContainer from "./pages/edit-recipe.js";
+import { getRecipeEdit, editRecipeContainer } from "./pages/edit-recipe.js";
 
 const recipeList = JSON.parse(localStorage.getItem("recipe")) || [];
 
@@ -22,8 +22,12 @@ const showRecipe = (list) => {
     //click for edit item
     item.addEventListener("click", (e) => {
       e.preventDefault();
+      //send recipe value in input edit container
+      getRecipeEdit(recipe);
+      //go to page
       navTo(item.href);
-      getEditData(recipe, index);
+      //edit & delete recipe
+      EditData(index);
     });
   });
 };
@@ -54,11 +58,11 @@ const router = () => {
   document.querySelector("#app").innerHTML = isMatch.view;
 
   //add & edit get data
-  if (isMatch.path == "/add-recipes") getAddData();
+  if (isMatch.path == "/add-recipes") AddData();
 };
 
 //get data in add recipe container
-const getAddData = () => {
+const AddData = () => {
   const recipeName = document.querySelector("#recipe-name");
   const recipeDescription = document.querySelector("#recipe-description");
   const addRecipe = document.querySelector("#add-recipe");
@@ -68,21 +72,40 @@ const getAddData = () => {
       name: recipeName.value,
       description: recipeDescription.value,
     };
-    saveData(newRecipe);
+
+    recipeList.push(newRecipe);
+    saveData(recipeList);
   });
 };
 
 //get data in edit recipe container
-const getEditData = (recipe, index) => {
-  console.log(recipe, index);
+const EditData = (index) => {
+  const recipe = recipeList[index];
+  const deleteRecipeBtn = document.querySelector("#delete-recipe-button");
+  const updateRecipe = document.querySelector("#update-recipe");
+
+  //delete recipe
+  deleteRecipeBtn.addEventListener("click", () => {
+    recipeList.splice(index, 1);
+    saveData(recipeList);
+  });
+
+  //edit recipe
+  updateRecipe.addEventListener("click", () => {
+    const recipeName = document.querySelector("#recipe-name");
+    const recipeDescription = document.querySelector("#recipe-description");
+
+    (recipe.name = recipeName.value),
+      (recipe.description = recipeDescription.value),
+      saveData(recipeList);
+  });
 };
 
 //sava in local storage and push in recipeList
 const saveData = (newRecipe) => {
-  recipeList.push(newRecipe);
-  localStorage.setItem("recipe", JSON.stringify(recipeList));
+  localStorage.setItem("recipe", JSON.stringify(newRecipe));
   navTo("/");
-  showRecipe();
+  showRecipe(newRecipe);
 };
 
 // filter recipe
