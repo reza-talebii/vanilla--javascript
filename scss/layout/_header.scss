@@ -1,32 +1,3 @@
 .header {
-    height: 95vh;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    @include liner-bg-green('../img/hero-small.jpg');
-    @media (-webkit-min-device-pixel-ratio: 2),
-        (-webkit-min-device-pixel-ratio: 2) and (min-width: 60rem),
-        (min-resolution: 192dpi) and (min-width: 60rem) {
-        @include liner-bg-green('../img/hero.jpg');
-    }
-    ////////// element /////////////////
-    &__menu {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 4rem;
-    }
-    &__logo > img {
-        width: 7rem;
-    }
-    &__content {
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 5.5rem;
-    }
-    @include respond(tab-land) {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 89vh, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 89vh, 0 100%);
-    }
+  height: 5rem;
 }
