@@ -2,8 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include margin-sections();
-
   &__logo {
     width: clamp(100px, 150px, 200px);
     margin-top: 2rem;
@@ -29,18 +27,12 @@
 
 // *************RESPONSIVE*****************
 @include responsive(lg) {
-  .nav {
-    margin: 0 6rem;
-  }
   .nav__list {
     width: 65%;
   }
 }
 
 @include responsive(md) {
-  .nav {
-    margin: 0 5rem;
-  }
   .nav__list {
     display: none;
   }
