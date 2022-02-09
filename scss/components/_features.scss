@@ -1,0 +1,25 @@
+.features {
+    background: rgba($color: $white-color, $alpha: 0.8);
+    text-align: center;
+    padding: 2.5rem;
+    margin: 1rem 2rem;
+    border-radius: 0.3rem;
+    @include transition(transform 0.3s);
+    cursor: pointer;
+
+    -webkit-user-select: none;
+
+       -moz-user-select: none;
+
+        -ms-user-select: none;
+
+            user-select: none;
+    &__icon {
+        @include font-liner();
+        font-size: 6rem;
+        margin: 2rem 0 4rem;
+    }
+    &:hover {
+        transform: scale(1.05) translateY(-1rem);
+    }
+}

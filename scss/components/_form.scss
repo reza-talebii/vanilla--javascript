@@ -1,0 +1,97 @@
+.form {
+    width: 100%;
+    &__group:not(:last-child) {
+        margin-bottom: 1.5rem;
+        @include respond(phone) {
+            margin-bottom: 0;
+        }
+    }
+    &__input {
+        display: block;
+        width: 100%;
+        font-family: inherit;
+        color: inherit;
+        outline: none;
+        border: none;
+        border-bottom: 3px solid transparent;
+        padding: 1.5rem 2rem;
+        border-radius: 3px;
+        @include transition(all 0.1s);
+        &::-webkit-input-placeholder {
+            color: rgba(94, 90, 90, 0.658);
+        }
+        &::-moz-placeholder {
+            color: rgba(94, 90, 90, 0.658);
+        }
+        &:-ms-input-placeholder {
+            color: rgba(94, 90, 90, 0.658);
+        }
+        &::-ms-input-placeholder {
+            color: rgba(94, 90, 90, 0.658);
+        }
+        &::placeholder {
+            color: rgba(94, 90, 90, 0.658);
+        }
+        &:focus {
+            border-bottom: 3px solid $medium-green;
+            box-shadow: 0 5rem 5rem rgba(94, 90, 90, 0.15);
+        }
+        &:focus:invalid {
+            border-bottom: 3px solid red;
+        }
+    }
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: 0.7rem;
+        display: block;
+        @include transition(all 0.3s);
+    }
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+    .radio__button-group {
+        display: inline-block;
+        width: 49%;
+        margin-bottom: 2rem;
+    }
+    &__radio {
+        display: none;
+    }
+    &__radio:checked ~ .radio__label span::after {
+        opacity: 1;
+    }
+    .radio__label {
+        font-size: 1.5rem;
+        margin-left: 1.5rem;
+        position: relative;
+        cursor: pointer;
+        padding-left: 4rem;
+        span {
+            height: 3rem;
+            width: 3rem;
+            border: 5px solid $dark-green;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: -0.4rem;
+            &::after {
+                content: '';
+                opacity: 0;
+                width: 1.2rem;
+                height: 1.2rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: $dark-green;
+                border-radius: 50%;
+                @include transition(all 0.2s);
+            }
+        }
+    }
+}

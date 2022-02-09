@@ -1,0 +1,152 @@
+.card {
+    perspective: 150rem;
+    height: 52rem;
+    position: relative;
+    margin: 2rem;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    @include respond(tab-port) {
+        height: 100rem;
+    }
+    &__side {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 2rem rgba($color: $black-color, $alpha: 0.1);
+        @include transition(transform 0.8s);
+
+        @include respond(tab-port) {
+            height: auto;
+            position: relative;
+        }
+        &--front {
+            background: $white-color;
+            @include respond(tab-port) {
+                height: 53%;
+                margin-bottom: -6rem;
+            }
+        }
+
+        &--back {
+            transform: rotateY(-180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $white-color;
+            @include respond(tab-port) {
+                -webkit-clip-path: polygon(0 17%, 100% 0%, 100% 100%, 0% 100%);
+                clip-path: polygon(0 17%, 100% 0%, 100% 100%, 0% 100%);
+                transform: rotateY(0deg);
+                height: 35%;
+            }
+            &-1 {
+                @include liner-card($dark-orange, $light-orange);
+            }
+            &-2 {
+                @include liner-card($dark-green, $light-green);
+            }
+            &-3 {
+                @include liner-card($dark-blue, $light-blue);
+            }
+        }
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0deg);
+        @include respond(tab-port) {
+            transform: inherit;
+        }
+    }
+    &:hover &__side--front {
+        transform: rotateY(180deg);
+        @include respond(tab-port) {
+            transform: inherit;
+        }
+    }
+
+    // FRONT CARD
+    &__picture {
+        background-blend-mode: screen;
+        height: 23rem;
+        background-size: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &--1 {
+            @include liner-card-image(
+                $dark-orange,
+                $light-orange,
+                '../img/nat-5.jpg'
+            );
+        }
+        &--2 {
+            @include liner-card-image(
+                $dark-green,
+                $light-green,
+                '../img/nat-6.jpg'
+            );
+        }
+        &--3 {
+            @include liner-card-image(
+                $dark-blue,
+                $light-blue,
+                '../img/nat-7.jpg'
+            );
+        }
+    }
+    &__heading {
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        text-align: right;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 72%;
+        &-span {
+            color: $white-color;
+            font-size: 2.7rem;
+            @extend %weight-300;
+            padding: 1rem 1.5rem;
+            -webkit-box-decoration-break: clone;
+            &--1 {
+                @include liner-card($dark-orange, $light-orange, 0.95);
+            }
+            &--2 {
+                @include liner-card($dark-green, $light-green, 0.95);
+            }
+            &--3 {
+                @include liner-card($dark-blue, $light-blue, 0.95);
+            }
+        }
+    }
+    &__list {
+        margin-top: 4rem;
+        width: 75%;
+        display: inline-block;
+        text-align: center;
+        list-style: none;
+        line-height: 4rem;
+        li {
+            font-size: 1.4rem;
+            &:not(:last-child) {
+                border-bottom: 1px solid rgb(233, 233, 233);
+            }
+        }
+    }
+    // BACK CARD
+    &__backHead {
+        font-size: 1.5rem;
+    }
+    &__price {
+        font-size: 6rem;
+        @extend %weight-300;
+        margin: 1rem 0 5rem;
+    }
+}
