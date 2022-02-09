@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10rem;
+  @include margin-sections();
 
   &__logo {
     width: clamp(100px, 150px, 200px);
@@ -12,7 +12,7 @@
   &__list {
     width: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
   }
 
@@ -20,17 +20,28 @@
     padding-top: 2rem;
   }
 
-  &__item .active {
-    background: $color-primary;
-    padding: 0.5rem 1.5rem;
-    border-radius: 3rem;
-    display: flex;
-    align-items: center;
-  }
-
   &__link {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-decoration: none;
     color: inherit;
+  }
+}
+
+// *************RESPONSIVE*****************
+@include responsive(lg) {
+  .nav {
+    margin: 0 6rem;
+  }
+  .nav__list {
+    width: 65%;
+  }
+}
+
+@include responsive(md) {
+  .nav {
+    margin: 0 5rem;
+  }
+  .nav__list {
+    display: none;
   }
 }

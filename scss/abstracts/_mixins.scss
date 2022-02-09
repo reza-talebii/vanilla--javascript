@@ -1,0 +1,26 @@
+@mixin margin-sections {
+  margin: 0 9rem;
+}
+
+@mixin responsive($view-port) {
+  @if ($view-port==sm) {
+    @media only screen and (max-width: $sm) {
+      @content;
+    }
+  }
+  @if ($view-port==md) {
+    @media only screen and (max-width: $md) {
+      @content;
+    }
+  }
+  @if ($view-port==lg) {
+    @media only screen and (max-width: $lg) {
+      @content;
+    }
+  }
+  @if ($view-port==xl) {
+    @media only screen and (max-width: $xl) {
+      @content;
+    }
+  }
+}
