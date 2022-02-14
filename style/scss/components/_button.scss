@@ -1,25 +1,40 @@
 .btn {
-  padding: 0.5rem 1.5rem;
-  border-radius: 3rem;
   display: flex;
   align-items: center;
+  font-size: 1.7rem;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  padding: 1.25rem 4.5rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: none;
 }
 .btn--green {
   background: $color-primary;
 }
 .text-btn {
-  outline: none;
-  border: none;
-  display: inline-block;
-  background: none;
   color: $color-primary;
-  font-size: 1.7rem;
-  font-family: inherit;
   border-bottom: 1px solid $color-primary;
-  padding-bottom: 0.3rem;
+  border-radius: 0;
+  padding: 1.25rem 0.5rem;
 }
 
 .btn--dark {
   background: #333;
   color: $color-primary;
+}
+
+.operations__btn--red {
+  background: $color-tertiary-darker;
+}
+
+.operations__btn--yellow {
+  background: $color-secondary;
+}
+
+.operations__btn--green {
+  background: $color-primary;
 }

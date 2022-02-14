@@ -24,3 +24,20 @@
     }
   }
 }
+
+@mixin icon-svg($bg, $bg-opacity) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-opacity;
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+
+  svg {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $bg;
+  }
+}
