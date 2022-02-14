@@ -27,8 +27,14 @@
     column-gap: 3rem;
     row-gap: 0.5rem;
   }
-  &__icon {
+  &__icon--yellow {
     @include icon-svg($color-tertiary, #ffbb0063);
+  }
+  &__icon--green {
+    @include icon-svg($color-tertiary, #5ec57649);
+  }
+  &__icon--red {
+    @include icon-svg($color-tertiary, #fd424b67);
   }
   &__header {
     font-size: 2.25rem;
