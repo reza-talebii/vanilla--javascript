@@ -1,25 +1,38 @@
 .features {
-    background: rgba($color: $white-color, $alpha: 0.8);
-    text-align: center;
-    padding: 2.5rem;
-    margin: 1rem 2rem;
-    border-radius: 0.3rem;
-    @include transition(transform 0.3s);
-    cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin: 0 5rem;
 
-    -webkit-user-select: none;
+  &__discretion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-       -moz-user-select: none;
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-primary-opacity;
+    height: 5.5rem;
+    width: 5.5rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
 
-        -ms-user-select: none;
-
-            user-select: none;
-    &__icon {
-        @include font-liner();
-        font-size: 6rem;
-        margin: 2rem 0 4rem;
+    svg {
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: $color-primary;
     }
-    &:hover {
-        transform: scale(1.05) translateY(-1rem);
-    }
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    color: #666;
+  }
 }

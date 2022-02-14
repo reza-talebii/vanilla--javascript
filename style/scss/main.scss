@@ -7,7 +7,8 @@
 // @import "base/animations";
 @import "base/utilities";
 
-@import url("components/_button.scss");
+@import "components/button";
+@import "components/features";
 
 @import "layout/header";
 @import "layout/navigation";

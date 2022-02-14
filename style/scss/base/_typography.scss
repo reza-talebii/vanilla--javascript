@@ -2,16 +2,16 @@ html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 
-  @include responsive(lg) {
+  @include responsive(xl) {
     font-size: 75%; //1rem = 12, 12/16
   }
 
-  @include responsive(md) {
+  @include responsive(lg) {
     // width < 1200?
     font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
   }
 
-  @include responsive(sm) {
+  @include responsive(md) {
     // width < 900?
     font-size: 50%; //1 rem = 8px, 8/16 = 50%
   }
