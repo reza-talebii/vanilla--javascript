@@ -57,5 +57,17 @@
 
   @include responsive(sm) {
     grid-template-columns: 1fr;
+    gap: 3rem;
+    &__icon {
+      margin-bottom: 1rem;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+    }
   }
 }
