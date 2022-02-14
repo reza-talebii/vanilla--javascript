@@ -1,0 +1,6 @@
+.section {
+  border-top: 1px solid #ddd;
+  @include margin-sections();
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
