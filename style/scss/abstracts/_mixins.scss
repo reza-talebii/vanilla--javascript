@@ -1,5 +1,6 @@
 @mixin margin-sections {
-  padding: 0 9rem;
+  padding-left: 9rem;
+  padding-right: 9rem;
 }
 
 @mixin responsive($view-port) {

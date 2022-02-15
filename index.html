@@ -33,7 +33,9 @@
             <a href="#" class="nav__link">Testimonials</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link btn btn--green">Open account</a>
+            <a href="#" class="nav__link btn btn--green open-modal"
+              >Open account</a
+            >
           </li>
         </ul>
         <section class="menu-humbugger">
@@ -220,9 +222,20 @@
           today!
         </h2>
       </section>
-      <button class="btn btn--green show-moudal-btn">
+      <button class="btn btn--green open-modal">
         Open your free account today!
       </button>
+    </section>
+
+    <section class="section">
+      <section class="section__title">
+        <h3 class="sections__discretion">NOT SURE YET?</h3>
+        <h2 class="sections__header">
+          Millions of Bankists are already making their lifes simpler.
+        </h2>
+      </section>
+
+      <section class="slider"></section>
     </section>
 
     <footer class="footer">
@@ -263,6 +276,25 @@
         as your own product.
       </p>
     </footer>
+
+    <!-- modal -->
+    <section class="modal hide">
+      <button id="close-modal" class="modal__close">×</button>
+      <h1 class="header__title">
+        Open your bank account <br />
+        in just <span class="highlight">5 minutes</span>
+      </h1>
+      <form action="#" class="modal__form">
+        <label>First Name</label>
+        <input type="text" />
+        <label>Last Name</label>
+        <input type="text" />
+        <label>Email Address</label>
+        <input type="email" />
+        <button class="btn btn--green">Next step →</button>
+      </form>
+    </section>
+    <section class="overlay hide"></section>
   </body>
   <script src="scripts/app.js"></script>
 </html>

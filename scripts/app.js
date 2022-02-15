@@ -2,6 +2,10 @@ const menu = document.querySelector(".menu-humbugger__list");
 const menuIcon = document.querySelector("#menu-icon");
 const closeIcon = document.querySelector("#close-icon");
 const operationBtnS = document.querySelectorAll(".operations__btn");
+const openModalBtn = document.querySelectorAll(".open-modal");
+const modalCloseBtn = document.querySelector(".modal__close");
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
 
 //FUNCTIONS
 const addEventElements = (elements, event, func) => {
@@ -33,7 +37,15 @@ const operationShowContent = (e) => {
   }
 };
 
+const toggleModal = (e) => {
+  e.preventDefault();
+  overlay.classList.toggle("hide");
+  modal.classList.toggle("hide");
+};
+
 //LISTENERS
 menuIcon.addEventListener("click", openMenu);
 closeIcon.addEventListener("click", closeMenu);
 addEventElements(operationBtnS, "click", operationShowContent);
+addEventElements(openModalBtn, "click", toggleModal);
+modalCloseBtn.addEventListener("click", toggleModal);

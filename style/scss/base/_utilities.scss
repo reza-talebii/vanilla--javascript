@@ -15,3 +15,9 @@
     transform: scale(1.07, 1.05) skewX(-15deg);
   }
 }
+
+.hide {
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+}
