@@ -1,7 +1,7 @@
 .section {
   border-top: 1px solid #ddd;
   @include margin-sections();
-  margin: 7rem 0;
+  padding: 7rem 0;
 }
 
 .section-signup {
