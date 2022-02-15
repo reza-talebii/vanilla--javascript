@@ -3,3 +3,19 @@
   @include margin-sections();
   margin: 7rem 0;
 }
+
+.section-signup {
+  background: #333;
+  color: #fff;
+  border-top: none;
+  border-bottom: 1px solid #444;
+  padding: 6rem 0;
+  text-align: center;
+
+  button {
+    font-size: 1.9rem;
+    margin: 0 auto;
+    font-weight: bold;
+    padding: 2rem 4.5rem;
+  }
+}
