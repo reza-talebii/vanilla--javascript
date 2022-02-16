@@ -1,0 +1,96 @@
+.slider {
+  max-width: 100rem;
+  height: 50rem;
+  position: relative;
+  margin: 0px auto;
+  overflow: hidden;
+
+  .slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+  }
+
+  //testimonial
+  .testimonial {
+    width: 70%;
+    position: relative;
+
+    &__header {
+      font-size: 2.2rem;
+      font-weight: 500;
+    }
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      top: -5.7rem;
+      left: -6.8rem;
+      line-height: 1;
+      font-size: 20rem;
+      font-family: inherit;
+      color: $color-primary;
+      z-index: -1;
+    }
+
+    &__text {
+      font-size: 1.8rem;
+      color: rgb(108, 108, 108);
+    }
+
+    &__author {
+      margin: 2.5rem 0;
+      display: grid;
+      grid-template-columns: 6.5rem 1fr;
+      column-gap: 2rem;
+    }
+
+    &__photo {
+      grid-row: 1 / span 2;
+      width: 7rem;
+      height: 7rem;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    &__name {
+      font-size: 1.7rem;
+      font-style: normal;
+    }
+
+    &__location {
+      font-size: 1.5rem;
+    }
+  }
+
+  //buttons & dots
+  &__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: inherit;
+    color: #333;
+    border-radius: 50%;
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 3.25rem;
+    cursor: pointer;
+
+    &--right {
+      right: 1%;
+    }
+    &--left {
+      left: 6%;
+    }
+  }
+}
