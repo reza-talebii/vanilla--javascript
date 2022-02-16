@@ -5,6 +5,11 @@
   @include margin-sections();
   padding-top: 7rem;
   padding-bottom: 7rem;
+
+  @include responsive(sm) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
 }
 
 .section-signup {

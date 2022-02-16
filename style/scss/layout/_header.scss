@@ -29,7 +29,8 @@
 
   // *************RESPONSIVE*****************
   @include responsive(lg) {
-    margin: 0 6rem;
+    padding-right: 6rem;
+    padding-left: 6rem;
 
     &__title {
       font-size: 4rem;
@@ -54,7 +55,9 @@
   }
 
   @include responsive(sm) {
-    margin: 0 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+
     &__title {
       font-size: 2.5rem;
     }
