@@ -1,4 +1,6 @@
 .section {
+  overflow: hidden;
+  transition: all 1s;
   border-top: 1px solid #ddd;
   @include margin-sections();
   padding-top: 7rem;
@@ -20,4 +22,9 @@
     font-weight: bold;
     padding: 2rem 4.5rem;
   }
+}
+
+.section-hidden {
+  transform: translateY(8rem);
+  opacity: 0;
 }

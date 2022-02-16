@@ -5,7 +5,7 @@ const addEventElements = (elements, event, func) => {
 };
 
 ///////////////////////////////////////
-// **************MENU************
+// ////////// MENU //////////
 const menu = document.querySelector(".menu-humbugger__list");
 const menuIcon = document.querySelector("#menu-icon");
 const closeIcon = document.querySelector("#close-icon");
@@ -41,7 +41,7 @@ closeIcon.addEventListener("click", closeMenu);
 addEventElements(operationBtnS, "click", operationShowContent);
 
 ///////////////////////////////////////
-// **************MODAL************
+// ////////// MODAL //////////
 const openModalBtn = document.querySelectorAll(".open-modal");
 const modalCloseBtn = document.querySelector(".modal__close");
 const overlay = document.querySelector(".overlay");
@@ -59,7 +59,7 @@ addEventElements(openModalBtn, "click", toggleModal);
 modalCloseBtn.addEventListener("click", toggleModal);
 
 ///////////////////////////////////////
-// **************SLIDER************
+// ////////// SLIDER //////////
 const slider = () => {
   const slides = document.querySelectorAll(".slide");
   const dotContainer = document.querySelector(".dots");
@@ -121,5 +121,23 @@ const slider = () => {
   btnLeft.addEventListener("click", prevSlide);
   btnRight.addEventListener("click", nextSlide);
 };
-
 slider();
+
+///////////////////////////////////////
+// ////////// scroll handler //////////
+const navigation = document.querySelector(".nav");
+const section_1 = document.querySelector("#section-1");
+const section_2 = document.querySelector("#section-2");
+const section_3 = document.querySelector("#section-3");
+const section_4 = document.querySelector("#section-4");
+
+window.addEventListener("scroll", (e) => {
+  const scrollY = window.pageYOffset;
+  //navigation
+  navigation.className = scrollY > 700 ? "nav sticky-nav" : "nav";
+  //effect sections
+  if (scrollY > 350) section_1.classList.remove("section-hidden");
+  if (scrollY > 1150) section_2.classList.remove("section-hidden");
+  if (scrollY > 2000) section_3.classList.remove("section-hidden");
+  if (scrollY > 2700) section_4.classList.remove("section-hidden");
+});
